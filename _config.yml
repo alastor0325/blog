@@ -1,8 +1,7 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Async Impulse
+title: Async Impulse | Alastor Wu
+description: Alastor Wu's personal website
 tags:
   - blog
   - template
@@ -19,18 +18,18 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
-disqus_username: disqus_username
+email: alastor0325@gmail.com
+disqus_username: alwu
 
 
 # Social Media Settings
 # Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
+github_username: alastor0325
+facebook_username:
+twitter_username:
+instagram_username:
+linkedin_username: alastor0325
+medium_username: alastor0325
 
 
 # Posts Settings
@@ -41,8 +40,8 @@ two_columns_layout: true
 
 
 # Advanced Settings
-baseurl: "/jekflix-template" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://alastor0325.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "en"
 categories_folder: category

@@ -1,7 +1,6 @@
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Async Impulse
+title: Async Impulse | Alastor Wu
+description: Alastor Wu's personal website
 tags:
   - blog
   - template
@@ -18,5 +17,5 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
-disqus_username: disqus_username
+email: alastor0325@gmail.com
+disqus_username: alwu
