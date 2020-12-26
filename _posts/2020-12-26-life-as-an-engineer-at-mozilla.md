@@ -14,7 +14,7 @@ author:
 paginate: false
 ---
 
-I joined Mozilla on September 2014, and it has been six years since then. I quite enjoy working at Mozilla and building a product that hundreds of millions users use in their daily life. Although Firefox is not as popular as it was before in this competitive browsers market, I am still proud of being able to be parts of members of Mozilla who are (mostly) willing to make internet more open and powerful. So today I would like to share some experience of what's it like as being an engineer at Mozilla.
+I joined Mozilla on September 2014, and it has been six years since then. I quite enjoy working at Mozilla and building a product that hundreds of millions users use in their daily life. Although Firefox is not as popular as it was before in this competitive browsers market, I am still proud of being one of members of Mozilla who are (mostly) willing to make internet more open and powerful. So today I would like to share some experience of what's it like as being an engineer at Mozilla.
 
 ### Three Major Media Components
 I work for media team, which is responsible for all media related things on the web, and there are three major conponents in media, which are respectively **Playback**, **WebAudio** and **WebRTC**.
@@ -31,7 +31,7 @@ In our team, media team, we manage issues related with those topics on our daily
 
 However, not all specifications are good for users, some of them might violate our belif which might cause security or privacy concern. Mozilla evaluates those unimplemented specifications and consider them as different [important level](https://mozilla.github.io/standards-positions/).
 
-For already implemented specifications, there might still be new feature requests coming in the future. If someone proposes a new feature, all browser venders would start discussion it on the github which specification belongs. If that proposal has positive feedbacks and gets enough browser venders interest, then it would go through the process of being added into the specification. This is a small [example](https://bit.ly/38Cripn) where someone proposes to let `TextTrackCue.endTime=Infinity` represent an unspecified future time, which can be used for live streaming subtitle.
+For already implemented specifications, there might still be new feature requests coming in the future. If someone proposes a new feature, all browser venders would start discussion it on the github which specification belongs. If that proposal has positive feedbacks and gets enough browser venders interest, then it would go through the process of being added into the specification. This is a small [example](https://bit.ly/38Cripn) where someone proposed to let `TextTrackCue.endTime=Infinity` represent an unspecified future time, which can be used for live streaming subtitle.
 
 ### Involving in Open Source Projects
 Yes, you may have already known that all the code we contribute to are open. Everyone are welcome to check our code and make any change on it (for sure, that should pass our code review and testing first ;) ) There are tons of projects in [Mozilla's github](https://github.com/mozilla), but the most important repository is the one for [Gecko](https://github.com/mozilla/gecko-dev) that is our core engine built inside Firefox to process almost everything when users is browsering websites. Our media components are just a small part of Gecko. Gecko is a mega open source project since 1998 that has near [23M code](https://www.openhub.net/p/firefox/analyses/latest/languages_summary) inside!
