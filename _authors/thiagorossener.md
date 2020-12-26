@@ -1,6 +1,6 @@
 ---
 layout: author
-photo: /assets/img/uploads/profile_poler.jpg
+photo: https://alastor0325.github.io/blog//assets/img/uploads/profile_poler.jpg
 name: alwu
 display_name: Alastor Wu
 position: Chief Editor
