@@ -30,6 +30,11 @@
           <svg><use xlink:href="#icon-linkedin"></use></svg>
         </a>
       {% endif %}
+      {% if site.email %}
+        <a href="mailto:{{ site.email }}" title="Email">
+          <svg><use xlink:href="#icon-mail2"></use></svg>
+        </a>
+      {% endif %}
     </p>
 
     {% include links.html %}
