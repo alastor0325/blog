@@ -11,7 +11,7 @@ permalink: /about/
 
 I'm Alastor Wu, a software engineer working at Mozilla. I work on things related with media playback on Firefox. In my spare time, I do bouldering, writing music related [articles](https://bit.ly/34HMxFj) and [reviews](https://alastorwu.blogspot.com/) as well as composing [music](https://bit.ly/2KqhBTd).
 <br>
-## <center>Work Experience</center>
+## Work Experience
 #### Senior Software Engineer @ Mozilla, Portland, US
 <small>March 2020 - present</small><br>
 Allowed users to [control media playback via media keys](https://bit.ly/2WJDEY0) on all platforms<br>
@@ -30,7 +30,7 @@ Designed the mechanism to postpone autoplay media in unvisited tabs<br>
 Implemented audio competing policy and media controller on Firefox Android<br>
 Implemented audio managing system on Firefox OS that controls if audio can start playing<br>
 
-## <center>Education</center>
+## Education
 <small>Jul 2012 - Jun 2014</small><br>
 Master, Multi-media Engineering in **National Chiao Tung University**<br>
 <small>Jul 2008 - Jun 2012</small><br>
