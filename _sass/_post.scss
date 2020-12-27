@@ -626,6 +626,7 @@
     letter-spacing: 0.025rem;
     line-height: rem(40px);
     padding: 0 rem(10px);
+    text-align: center;
 
     @include media(">=sm") {
       font-size: rem(20px);

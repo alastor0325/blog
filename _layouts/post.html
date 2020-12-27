@@ -31,6 +31,14 @@
 
                 {{ content }}
 
+                <div class="tags">
+                    {% for tag in page.tags %}
+                        {% if tag != "" %}
+                            <a href="{{ site.baseurl}}/tags/#{{tag | slugify }}">#{{ tag }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
                 {% include pagination-post.html %}
             </article>
 
