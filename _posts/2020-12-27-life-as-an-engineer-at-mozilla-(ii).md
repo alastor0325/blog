@@ -32,7 +32,7 @@ There are several ways to ask information from bug reporters, the first method w
 ![about:support]({{site.baseurl}}/assets/img/uploads/Life_Mozilla_II/about_support.png)
 <figcaption><sub><sup>`about:support` page</sup></sub></figcaption>
 
-If an issue is performance facing, such like video or audio stuttering, then we will usually ask them to enable Firefox [profiler](https://profiler.firefox.com/) that allows users to do a real-time profiling on multiple processes and threads. By adding labels and markers in our code, profiler is able to know the callstack and what component those function calls belong to. In the profiler setting, you can use the default preset or customize a setting to profile the threads you want to investigate.
+If an issue is performance facing, such like video or audio stuttering, then we will usually ask them to enable Firefox [profiler](https://profiler.firefox.com/) that allows users to do a real-time profiling on multiple processes and threads. By adding labels and markers in our code, the profiler is able to know the callstack and what component those function calls belong to. In the profiler setting, you can use the default preset or customize a setting to profile the threads you want to investigate.
 
 ![Firefox Profiler]({{site.baseurl}}/assets/img/uploads/Life_Mozilla_II/profiler.jpeg)
 <figcaption><sub><sup>Firefox Profiler</sup></sub></figcaption>
@@ -63,11 +63,11 @@ The higher level test is, the more unstable test is. Because comparing with lowe
 
 Finally, you're only a step away from the destination, after we pass the code review and all testing on the try server. We have several branches for Firefox, the one we would encouter first is ["autoland"](https://hg.mozilla.org/integration/autoland/) which is a branch where all new changes would be landed first to see if they would break anything, from builds to tests.  It’s like a frontline of battlefield where all those new changes are battling each other and we only want to pick those good and stable changes into next stage.
 
-After we ensure that those new changes are all good by baking them on the autoland for a while (usaually serveral hours to a day), then they would go to the next branch ["central"](https://hg.mozilla.org/mozilla-central) that uses to build a [Nightly version of Firefox](https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly). Besides that, we also have ["beta"](https://hg.mozilla.org/releases/mozilla-beta/), which is used to build [Firefox Beta and Developer Edition](https://www.mozilla.org/en-US/firefox/channel/desktop/#beta), and ["release"](https://hg.mozilla.org/releases/mozilla-release/), which would eventaully become the exact Firefox hundreds of millions users are using everyday.
+After we ensure that those new changes are all good by baking them on the autoland for a while (usaually serveral hours to a day), then they would go to the next branch ["central"](https://hg.mozilla.org/mozilla-central), which is used to build a [Nightly version of Firefox](https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly). Besides that, we also have ["beta"](https://hg.mozilla.org/releases/mozilla-beta/) for [Firefox Beta and Developer Edition](https://www.mozilla.org/en-US/firefox/channel/desktop/#beta), and ["release"](https://hg.mozilla.org/releases/mozilla-release/), which would eventaully become the exact Firefox hundreds of millions users are using everyday.
 
 ![Different Versions of Firefox]({{site.baseurl}}/assets/img/uploads/Life_Mozilla_II/firefox_version.png)
 <figcaption><sub><sup>Different Versions of Firefox</sup></sub></figcaption>
 
-Currently the frequency of releasing a new version of Firefox is on a monthly basis, and it's even longer on Firefox Extended Support Release (ESR) version. You can check the release schedule [here](https://wiki.mozilla.org/Release_Management/Calendar).
+Currently the frequency of releasing a new version of Firefox is on a monthly basis, and it's even longer on [Firefox Extended Support Release](https://www.mozilla.org/en-US/firefox/enterprise/) (ESR) version. That means the changes in "central" would be merged into "beta" after a month, and merging changes from "beta" to "release" as well. You can check the release schedule [here](https://wiki.mozilla.org/Release_Management/Calendar).
 
 That’s what we would go through in our daily development, thank you for your reading and hope you enjoying!
