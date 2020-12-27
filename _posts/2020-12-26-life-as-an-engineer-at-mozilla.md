@@ -4,7 +4,7 @@ layout: post
 title: "Life as an engineer at Mozilla"
 subtitle:
 description:
-image: https://alastor0325.github.io/blog/assets/img/uploads/firefox.jpeg
+image: /assets/img/uploads/firefox.jpeg
 optimized_image:
 category: life
 tags:

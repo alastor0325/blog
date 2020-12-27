@@ -20,7 +20,7 @@
             {% if recommendation.optimized_image %}
                 <img src="{{ recommendation.optimized_image }}">
             {% elsif recommendation.image %}
-                <img src="{{ recommendation.image }}">
+                <img src="{{ recommendation.image | prepend: site.baseurl }}">
             {% else %}
                 <img src="/assets/img/off.jpg">
             {% endif %}
