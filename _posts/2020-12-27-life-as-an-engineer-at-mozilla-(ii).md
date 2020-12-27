@@ -10,6 +10,7 @@ category: life
 tags:
   - life
   - tech
+  - mozilla
 paginate: false
 ---
 
