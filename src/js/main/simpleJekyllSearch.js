@@ -18,7 +18,8 @@
         if(settings.jsonFile.length && searchResults.length){
             $.ajax({
                 type: "GET",
-                url: settings.jsonFile,
+                //url: settings.jsonFile,
+                url: "https://alastor0325.github.io/blog/search.json",
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR) {
                     jsonData = data;
