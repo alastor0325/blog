@@ -15,7 +15,7 @@ author:
 paginate: false
 ---
 
-I joined Mozilla on September 2014, and it has been six years since then. I quite enjoy working at Mozilla and building a product that hundreds of millions users use in their daily life. Although Firefox is not as popular as it was before in this competitive browsers market, I am still proud of being one of members of Mozilla who are (mostly) willing to make internet more open and powerful. So today I would like to share some experience of what it's like as being an engineer at Mozilla.
+I joined Mozilla in September 2014, and it has been six years since then. I quite enjoy working at Mozilla and building a product that hundreds of millions users use in their daily life. Although Firefox is not as popular as it was before in this competitive browsers market, I am still proud of being one of members of Mozilla who are (mostly) willing to make internet more open and powerful. So today I would like to share some experience of what it's like as being an engineer at Mozilla.
 
 ### Three Major Media Components
 I work for media team, which is responsible for all media related things on the web, and there are three major components in media, which are respectively **Playback**, **WebAudio** and **WebRTC**.
