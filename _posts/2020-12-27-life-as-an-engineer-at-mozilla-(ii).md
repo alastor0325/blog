@@ -58,7 +58,7 @@ Only limited number of unit tests are integrated into Phabricator, so we have an
 
 In the example I showed above, I chose to write a [mochitest](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Mochitest) to simulate playing a mp3 file which has multiple ID3v2 tags via an audio element, and check whether it can start playing correctly. If the bug I'm fixing involves tab's activity changes, then I would choose to write a higher level test, [browser chrome test](https://developer.mozilla.org/en-US/docs/Mozilla/Browser_chrome_tests), which allows operating tabs directly as if users are operating real actions. If we need to compare the visual difference, then [reftest](https://firefox-source-docs.mozilla.org/web-platform/writing-tests/reftests.html) would be your friend.
 
-The higher level test is, the more unstable test is. Because comparing with lower level test, it would have needed to rely on more modules. So choosing what test you should use is important depending on the scale of the problem you’re working on.
+The higher level test is, the higher chance that test would be less stable. Because comparing with lower level test, it would have needed to rely on more modules. So choosing what test you should use is important depending on the scale of the problem you’re working on.
 
 ### Landing The Fix
 
