@@ -6,7 +6,6 @@
     var shouldShow = true;
 
     if (post && timeBar) {
-        var lastScrollTop = 0;
         var maxScrollTop = post.scrollHeight;
 
         var completed = timeBar.querySelector('.completed');
@@ -17,7 +16,7 @@
         document.addEventListener('scroll', function () {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (scrollTop > lastScrollTop && shouldShow) {
+            if (scrollTop && shouldShow) {
                 timeBar.style.bottom = '0%';
             } else {
                 timeBar.style.bottom = '-100%';
@@ -66,8 +65,6 @@
 
                 triggerFinishedReading();
             }
-
-            lastScrollTop = scrollTop;
         });
     }
 
