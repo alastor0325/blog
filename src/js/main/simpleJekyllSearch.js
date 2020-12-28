@@ -19,7 +19,7 @@
             $.ajax({
                 type: "GET",
                 //url: settings.jsonFile,
-                url: "https://alastor0325.github.io/blog/search.json",
+                url: "https://asyncimpluse.com/search.json",
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR) {
                     jsonData = data;
