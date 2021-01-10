@@ -11,7 +11,6 @@ tags:
   - life
   - tech
   - mozilla
-author:
 paginate: false
 ---
 

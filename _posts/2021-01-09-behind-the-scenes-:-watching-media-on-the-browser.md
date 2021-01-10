@@ -10,7 +10,6 @@ category: tech
 tags:
   - tech
   - mozilla
-author: Alastor Wu
 paginate: false
 ---
 
