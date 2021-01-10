@@ -19,7 +19,7 @@
             $.ajax({
                 type: "GET",
                 //url: settings.jsonFile,
-                url: "https://asyncimpluse.com/search.json",
+                url: "https://asyncimpulse.com/search.json",
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR) {
                     jsonData = data;
