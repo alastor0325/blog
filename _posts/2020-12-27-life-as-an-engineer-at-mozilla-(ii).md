@@ -2,8 +2,8 @@
 date: 2020-12-27 01:09:43
 layout: post
 title: "Life as an engineer at Mozilla (II)"
-subtitle:
-description:
+subtitle: Reveal tasks a software engineer in Mozilla would tackle every day.
+description: This series of articles go through those tasks that a Mozilla engineer would tackle in daily life and introduce the tools we're using in development.
 image: /assets/img/uploads/firefox-quantum-robot.webp
 optimized_image:
 category: life
