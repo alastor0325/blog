@@ -116,9 +116,9 @@ Take **5.1** (**3F2-LFE** : means 3 front speakers, 2 rear speakers and 1 for lo
 
 Another question pops out, **what would happen if the input and the output have different audio channel layout?**
 
-If we only have stereo data, how can they be played on 5.1 sound system? What data would be filled into those channels that doesn’t exist in stereo? Eeg. center. Apparently we need some convertion.
+If we only have stereo data, how can they be played on 5.1 sound system? What data should be filled into those channels that don’t exist in stereo? Eeg. center. Apparently we need some conversion.
 
-When the input has more channels than the output, we need to perform **downmixing**. When the input has less channels then the output, **upmixing** is required. That would simply be done by applying the original data with a convertion matrix, which is defined in [this specification](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.775-3-201208-I!!PDF-E.pdf). If you're interest in more details on how is **downmixing/upmixing** performed, check [this article](https://chunminchang.github.io/blog/post/audio-5-1#mixing).
+When the input has more channels than the output, we need to perform **downmixing**. When the input has less channels then the output, **upmixing** is required. That would simply be done by applying the original data with a conversion matrix, which is defined in [this specification](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.775-3-201208-I!!PDF-E.pdf). If you're interest in more details on how is **downmixing/upmixing** performed, check [this article](https://chunminchang.github.io/blog/post/audio-5-1#mixing).
 
 Then browsers finally are able to send those audio data into the audio hardwares by using some audio back libraries. In Firefox, we use [cubeb](https://github.com/mozilla/cubeb) to perform cross-platform(Windows/MacOS/Linux/Android) implementation. By wrapping platform specific details in API cubeb provides, Firefox are able to easily send data to audio driver and play them to users.
 
