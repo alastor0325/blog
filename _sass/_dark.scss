@@ -1,0 +1,246 @@
+/**
+ * Dark theme prototype — palette borrowed from the fx-bug-toolkit viewer.
+ * Imported last in main.scss so it overrides the light defaults. Remove the
+ * `@import "dark";` line to revert to the original light theme.
+ */
+
+$d-bg:        #0c0c0e;
+$d-rail:      #121215;
+$d-panel:     #141418;
+$d-raised:    #1a1a1f;
+$d-line:      #26262d;
+$d-line-soft: #1d1d22;
+$d-ink:       #e8e8ec;
+$d-dim:       #9a9aa4;
+$d-faint:     #65656e;
+$d-amber:     #ffb454;
+$d-amber-dim: #c8893f;
+
+/* --- Base --------------------------------------------------------------- */
+
+html,
+body {
+  background: $d-bg;
+  color: $d-ink;
+}
+
+::selection {
+  background: rgba(255, 180, 84, 0.25);
+}
+
+/* --- Header / nav ------------------------------------------------------- */
+
+.bar-header,
+body.light:not(.main-page) .bar-header {
+  background-color: $d-panel;
+  border-bottom: 1px solid $d-line-soft;
+  box-shadow: none;
+}
+
+/* --- Article ------------------------------------------------------------ */
+
+.post-content,
+.post-content p,
+.post-content li,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: $d-ink;
+}
+
+.post-content p.post-subtitle,
+.post-content p.post-info,
+.post-content figcaption,
+.post-content img + em {
+  color: $d-dim;
+}
+
+.post-content a {
+  color: $d-amber;
+
+  &:hover {
+    color: $d-amber-dim;
+  }
+}
+
+.post-content blockquote {
+  border-left-color: $d-amber;
+  color: $d-dim;
+}
+
+.post-content hr {
+  border: 0;
+  border-top: 1px solid $d-line;
+}
+
+.post-content table {
+  th,
+  td {
+    border-color: $d-line;
+  }
+
+  th {
+    background: $d-raised;
+  }
+}
+
+/* Inline code (fenced blocks already ship a dark Dracula palette). */
+.post-content :not(pre) > code {
+  background: $d-raised;
+  color: $d-amber;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+/* --- See also ----------------------------------------------------------- */
+
+.see-also {
+  h2 {
+    border-bottom-color: $d-line;
+  }
+
+  ul li {
+    h3 {
+      color: $d-ink;
+    }
+
+    a {
+      color: $d-ink;
+
+      &:hover {
+        color: $d-amber;
+      }
+    }
+  }
+}
+
+/* --- Reading progress / time bar --------------------------------------- */
+
+.progress-bar {
+  background-color: $d-panel;
+  border-bottom-color: $d-amber;
+
+  .bar {
+    background-color: $d-amber;
+  }
+}
+
+/* --- Pagination --------------------------------------------------------- */
+
+.pagination-post a,
+.pagination a {
+  background-color: $d-panel;
+  color: $d-amber;
+  border-color: $d-amber;
+
+  &:hover {
+    background-color: $d-amber;
+    color: $d-bg;
+  }
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+footer {
+  background: $d-panel;
+  border-top: 1px solid $d-line;
+
+  p,
+  a {
+    color: $d-dim;
+  }
+
+  a:hover {
+    color: $d-amber;
+  }
+}
+
+/* --- Author card -------------------------------------------------------- */
+
+.author {
+  background: $d-raised;
+
+  .def {
+    color: $d-dim;
+  }
+
+  .name a {
+    color: $d-ink;
+
+    &:hover {
+      color: $d-amber;
+    }
+  }
+
+  .desc {
+    color: $d-dim;
+  }
+
+  /* Social icons are SVGs coloured via `fill`, not `color`. */
+  a {
+    fill: $d-dim;
+
+    &:hover {
+      fill: $d-amber;
+    }
+  }
+}
+
+/* --- Modal -------------------------------------------------------------- */
+
+.modal .window {
+  background-color: $d-panel;
+  color: $d-ink;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+  h2,
+  h3 {
+    color: $d-ink;
+  }
+
+  p {
+    color: $d-dim;
+  }
+}
+
+/* --- Forms / subscription ---------------------------------------------- */
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea {
+  background: $d-raised;
+  color: $d-ink;
+  border-color: $d-line;
+
+  &::placeholder {
+    color: $d-faint;
+  }
+}
+
+button[type="submit"],
+input[type="submit"],
+.btn {
+  background: $d-amber;
+  color: $d-bg;
+  border-color: $d-amber-dim;
+
+  &:hover {
+    background: $d-amber-dim;
+  }
+}
+
+/* --- Home listing ------------------------------------------------------- */
+
+.home {
+  .box-content {
+    h2,
+    h3,
+    a {
+      color: $d-ink;
+    }
+  }
+}
