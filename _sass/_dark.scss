@@ -69,6 +69,12 @@ body.light:not(.main-page) .bar-header {
 .post-content blockquote {
   border-left-color: $d-amber;
   color: $d-dim;
+
+  /* The base theme sets blockquote paragraphs to rgba(0,0,0,.6), which is
+     invisible on a dark background. */
+  p {
+    color: $d-dim;
+  }
 }
 
 .post-content hr {
