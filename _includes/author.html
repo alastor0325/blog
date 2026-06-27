@@ -9,7 +9,7 @@
       {% endif %}
       <p class="def">{{ site.translations.text.author | default: "Author" }}</p>
       <h3 class="name">
-        <a href="{{ author.url }}">{{ author.display_name }}</a>
+        <a href="{{ site.baseurl }}/about/">{{ author.display_name }}</a>
       </h3>
       <p class="desc">{{ author.bio }}</p>
       <p>
@@ -83,7 +83,7 @@
       "image": {{ "/assets/img/user.jpg" | prepend: site.baseurl | prepend: site.url }},
       {% endif %}
       "jobTitle": "{{ author.position }}",
-      "url": "{{ author.url | prepend: site.baseurl | prepend: site.url }}",
+      "url": "{{ '/about/' | prepend: site.baseurl | prepend: site.url }}",
       "sameAs": [
         {{ author_urls | split: "," | join: "," }}
       ]

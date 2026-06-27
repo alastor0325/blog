@@ -4,7 +4,7 @@ photo: /assets/img/uploads/profile_poler.jpg
 name: alwu
 display_name: Alastor Wu
 position: Chief Editor
-bio: Software Engineer at Mozilla
+bio: Media Playback Team @ Mozilla
 github_username: alastor0325
 facebook_username:
 twitter_username:
