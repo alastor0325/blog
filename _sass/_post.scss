@@ -65,19 +65,34 @@
   ul,
   ol,
   iframe {
-    @include center(rem(800px));
+    @include center(rem(1040px));
     @include mainFont(400);
     font-size: rem(17px);
-    line-height: rem(30px);
+    line-height: rem(28px);
     letter-spacing: 0.025rem;
     padding: 0 rem(20px);
-    margin: rem(20px) auto 0;
+    margin: rem(18px) auto 0;
 
     @include media(">=sm") {
       font-size: rem(20px);
-      line-height: rem(40px);
-      margin: rem(29px) auto 0;
+      line-height: rem(34px);
+      margin: rem(24px) auto 0;
     }
+  }
+
+  // Keep wide blocks (code/diagrams, tables) from sprawling to full width.
+  // Code/diagram blocks hug their content (centered, capped at the text width);
+  // tables align to the text column.
+  pre {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: rem(1040px);
+    margin: rem(24px) auto;
+  }
+
+  table {
+    max-width: rem(1040px);
+    margin: rem(24px) auto;
   }
 
   h1.post-title {
@@ -186,11 +201,11 @@
   h6 {
     @include mainFont(700);
     margin-top: 0;
-    padding-top: rem(50px);
+    padding-top: rem(24px);
 
     @include media(">=sm") {
       margin-top: 0;
-      padding-top: rem(60px);
+      padding-top: rem(32px);
     }
   }
   h1 {
