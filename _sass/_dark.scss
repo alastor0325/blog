@@ -101,6 +101,26 @@ body.light:not(.main-page) .bar-header {
   padding: 0.1em 0.35em;
 }
 
+/* Transparent PNGs (e.g. diagrams with dark linework) were drawn for a light
+   page, so the dark background shows through and hides them. Give content
+   images a white canvas — opaque photos cover it and are unaffected. */
+.post-content img {
+  background: #fff;
+}
+
+/* --- Tags --------------------------------------------------------------- */
+
+.post-content .tags a {
+  color: $d-ink;
+  border-color: $d-line;
+
+  &:hover {
+    color: $d-bg;
+    background-color: $d-amber;
+    border-color: $d-amber;
+  }
+}
+
 /* --- See also ----------------------------------------------------------- */
 
 .see-also {
