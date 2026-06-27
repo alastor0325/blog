@@ -87,6 +87,8 @@ exclude: [
   'package-lock.json',
   'src',
   'node_modules',
+  'vendor',
+  '.bundle',
   'initpost.sh',
   'Gemfile',
   'Gemfile.lock',
