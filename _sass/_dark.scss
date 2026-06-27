@@ -108,6 +108,13 @@ body.light:not(.main-page) .bar-header {
   background: #fff;
 }
 
+/* The heading anchor icon is a black glyph; keep it transparent (not the white
+   canvas above) and lighten it so it shows on the dark background. */
+.post-content .anchor img {
+  background: none;
+  filter: invert(0.8);
+}
+
 /* --- Tags --------------------------------------------------------------- */
 
 .post-content .tags a {
