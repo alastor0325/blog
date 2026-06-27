@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { clamp01, computeProgress, formatTime } = require('../src/js/main/timeBar.js');
+const { clamp01, computeProgress, formatTime } = require('../../src/js/main/timeBar.js');
 
 // A typical tall article: 4000px tall, 800px viewport => 3200px of scroll range.
 const ARTICLE_HEIGHT = 4000;
