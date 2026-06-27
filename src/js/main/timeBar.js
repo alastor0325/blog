@@ -27,6 +27,24 @@
         return clamp01((scrollTop - articleTop) / scrollable);
     }
 
+    // Inverse of computeProgress: the scroll position whose reading progress is
+    // `fraction`. Used to turn a click on the bar into a scroll target.
+    function scrollTargetForFraction(fraction, articleTop, articleHeight, viewportHeight) {
+        var scrollable = articleHeight - viewportHeight;
+        if (scrollable < 0) {
+            scrollable = 0;
+        }
+        return articleTop + fraction * scrollable;
+    }
+
+    // Where a horizontal position falls along a track, as a fraction in [0, 1].
+    function fractionFromX(clientX, trackLeft, trackWidth) {
+        if (trackWidth <= 0) {
+            return 0;
+        }
+        return clamp01((clientX - trackLeft) / trackWidth);
+    }
+
     function pad(value) {
         return (value < 10) ? '0' + value : '' + value;
     }
@@ -43,6 +61,8 @@
         module.exports = {
             clamp01: clamp01,
             computeProgress: computeProgress,
+            scrollTargetForFraction: scrollTargetForFraction,
+            fractionFromX: fractionFromX,
             formatTime: formatTime
         };
     }
@@ -115,6 +135,51 @@
     document.addEventListener('scroll', requestRender, { passive: true });
     window.addEventListener('resize', requestRender);
     render();
+
+    // --- Minimap navigation: click / drag the bar to jump through the article -
+
+    var bar = timeBar.querySelector('.bar');
+    var scrubbing = false;
+
+    // Map a fraction [0, 1] of the bar back to a scroll position and jump there.
+    function scrollToFraction(fraction, behavior) {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var rect = post.getBoundingClientRect();
+        window.scrollTo({
+            top: scrollTargetForFraction(fraction, rect.top + scrollTop, rect.height, window.innerHeight),
+            behavior: behavior || 'auto'
+        });
+    }
+
+    // Map a horizontal click position to a fraction of the bar's track, which is
+    // inset by the bar's left/right padding.
+    function fractionFromClientX(clientX) {
+        var rect = bar.getBoundingClientRect();
+        var style = window.getComputedStyle(bar);
+        var padLeft = parseFloat(style.paddingLeft) || 0;
+        var padRight = parseFloat(style.paddingRight) || 0;
+        return fractionFromX(clientX, rect.left + padLeft, rect.width - padLeft - padRight);
+    }
+
+    bar.addEventListener('pointerdown', function (event) {
+        scrubbing = true;
+        if (bar.setPointerCapture) {
+            bar.setPointerCapture(event.pointerId);
+        }
+        scrollToFraction(fractionFromClientX(event.clientX), 'smooth');
+        event.preventDefault();
+    });
+    bar.addEventListener('pointermove', function (event) {
+        if (scrubbing) {
+            scrollToFraction(fractionFromClientX(event.clientX), 'auto');
+        }
+    });
+    bar.addEventListener('pointerup', function () {
+        scrubbing = false;
+    });
+    bar.addEventListener('pointercancel', function () {
+        scrubbing = false;
+    });
 
     function triggerStillReading() {
         var readEvent = document.createEvent('CustomEvent');

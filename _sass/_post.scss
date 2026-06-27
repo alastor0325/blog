@@ -461,6 +461,8 @@
     display: block;
     width: 100%;
     padding: rem(8px) rem(60px);
+    cursor: pointer;
+    touch-action: none;
     &:after {
       clear: both;
       display: block;

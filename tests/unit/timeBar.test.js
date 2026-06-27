@@ -3,7 +3,13 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { clamp01, computeProgress, formatTime } = require('../../src/js/main/timeBar.js');
+const {
+    clamp01,
+    computeProgress,
+    scrollTargetForFraction,
+    fractionFromX,
+    formatTime
+} = require('../../src/js/main/timeBar.js');
 
 // A typical tall article: 4000px tall, 800px viewport => 3200px of scroll range.
 const ARTICLE_HEIGHT = 4000;
@@ -44,6 +50,47 @@ test('computeProgress clamps past the article to 1', () => {
 test('computeProgress returns 1 when the article is shorter than the viewport', () => {
     // Nothing to scroll, so the whole article is already read.
     assert.equal(computeProgress(0, 0, 600, VIEWPORT), 1);
+});
+
+test('scrollTargetForFraction maps 0/0.5/1 to the article top, midpoint, and end', () => {
+    assert.equal(scrollTargetForFraction(0, 0, ARTICLE_HEIGHT, VIEWPORT), 0);
+    assert.equal(scrollTargetForFraction(0.5, 0, ARTICLE_HEIGHT, VIEWPORT), SCROLLABLE / 2);
+    assert.equal(scrollTargetForFraction(1, 0, ARTICLE_HEIGHT, VIEWPORT), SCROLLABLE);
+});
+
+test('scrollTargetForFraction accounts for the article offset from the document top', () => {
+    const top = 500;
+    assert.equal(scrollTargetForFraction(0, top, ARTICLE_HEIGHT, VIEWPORT), top);
+    assert.equal(scrollTargetForFraction(1, top, ARTICLE_HEIGHT, VIEWPORT), top + SCROLLABLE);
+});
+
+test('scrollTargetForFraction is the inverse of computeProgress (round trip)', () => {
+    const top = 500;
+    for (const scrollTop of [500, 1200, 2100, 3700]) {
+        const f = computeProgress(scrollTop, top, ARTICLE_HEIGHT, VIEWPORT);
+        assert.equal(scrollTargetForFraction(f, top, ARTICLE_HEIGHT, VIEWPORT), scrollTop);
+    }
+});
+
+test('scrollTargetForFraction clamps a short article to the article top', () => {
+    // Article shorter than the viewport: there is nowhere to scroll.
+    assert.equal(scrollTargetForFraction(0.5, 300, 600, VIEWPORT), 300);
+});
+
+test('fractionFromX maps a click position along the track', () => {
+    // Track spans clientX 100..900 (width 800).
+    assert.equal(fractionFromX(100, 100, 800), 0);
+    assert.equal(fractionFromX(500, 100, 800), 0.5);
+    assert.equal(fractionFromX(900, 100, 800), 1);
+});
+
+test('fractionFromX clamps clicks outside the track', () => {
+    assert.equal(fractionFromX(40, 100, 800), 0);
+    assert.equal(fractionFromX(9999, 100, 800), 1);
+});
+
+test('fractionFromX returns 0 for a zero-width track', () => {
+    assert.equal(fractionFromX(50, 100, 0), 0);
 });
 
 test('clamp01 bounds values to [0, 1]', () => {
