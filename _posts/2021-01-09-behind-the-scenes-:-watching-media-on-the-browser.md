@@ -1,7 +1,7 @@
 ---
 date: 2021-01-09 19:50:00
 layout: post
-title: "Behind the scenes : watching media on the browser (I)"
+title: "Behind the scenes : watching media on the browser"
 subtitle: Go through the whole journey of how media are being play on the internet.
 description:  In this article, you're going to know each different stages involving in media playback on the internet, such as data delivery, streaming implementation, basic concept of data compression and decompress and audio file structure.
 image: /assets/img/uploads/watching-media-on-browser/netflix.webp
