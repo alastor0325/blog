@@ -17,6 +17,9 @@
   ],
   "author": "Thiago Rossener",
   "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/"
+  },
   "bugs": {
     "url": "https://github.com/thiagorossener/jekflix-template/issues"
   },
