@@ -14,10 +14,27 @@
   @media (orientation: portrait) {
     background-image: var(--hero-portrait, var(--hero));
 
-    // When a 3:4 portrait is supplied, match the hero box to that aspect so the
-    // whole illustration shows instead of being cropped inside the 100vh hero.
+    // When a 3:4 portrait is supplied, grow the hero to fit its content but keep
+    // it at least the portrait's aspect — so a short post shows the whole image,
+    // and a long title is never cropped. Content flows (not absolutely centered)
+    // so it can push the hero taller, with top padding to clear the fixed header.
     &.has-portrait {
-      height: calc(100vw * 4 / 3);
+      height: auto;
+
+      .content {
+        position: relative;
+        height: auto;
+        min-height: calc(100vw * 4 / 3);
+        box-sizing: border-box;
+        padding-top: rem(70px);
+        padding-bottom: rem(40px);
+      }
+    }
+
+    // The theme overlaps the grid onto the hero by -80px, which collides with
+    // the content once the portrait hero is content-height; drop the overlap.
+    &.has-portrait + #grid {
+      margin-top: 0;
     }
   }
 
