@@ -115,6 +115,12 @@ body.light:not(.main-page) .bar-header {
   filter: invert(0.8);
 }
 
+/* Rounded images (e.g. the about-page profile photo) are opaque and circular;
+   the white canvas above would show as a halo around the crop. */
+.post-content img.img-rounded {
+  background: none;
+}
+
 /* --- Tags --------------------------------------------------------------- */
 
 .post-content .tags a {
